@@ -144,7 +144,15 @@ class DeliveryNote(SellingController):
 	#           i.qty=self.actual_weight
 
 	#-----------------------------------------------------------------------------------------------------------------
-	
+ 
+	# @frappe.whitelist()
+	# def fetch_add(self):
+	# 	frappe.msgprint("hiii")
+	# 	doc_if_present= frappe.get_all("Dynamic Link",fields={"name","address_title"})
+	# 	for d in doc_if_present.links:
+	# 		if d.link_name == self.party_code:
+	# 			frappe.msgprint(str(d.link_name))
+		
 
 	def __init__(self, *args, **kwargs):
 		super(DeliveryNote, self).__init__(*args, **kwargs)

@@ -62,18 +62,18 @@ form_grid_templates = {"items": "templates/form_grid/stock_entry_grid.html"}
 
 
 class StockEntry(StockController):
-
 	@frappe.whitelist()
 	def before_save(self):
+		tac=0
 		pd=self.process_definition
 		if str(self.stock_entry_type)=='Process Manufacturing':
 			prod=frappe.db.get_list("Process Definition",fields=['name',],filters={'name':str(pd)})
 			for l in prod:
 				total_qty=0
 				raw_qty=0
-				tac=0
+				
 				pdoc=frappe.get_doc("Process Definition",l.name)
-					
+			
 				for m in pdoc.get('materials'):
 					total_qty=total_qty+m.quantity
 					for i in self.get('items'):

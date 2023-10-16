@@ -53,6 +53,7 @@
   "section_break_34",
   "total_allocated_amount",
   "base_total_allocated_amount",
+  "in_words",
   "set_exchange_gain_loss",
   "column_break_36",
   "unallocated_amount",
@@ -728,12 +729,17 @@
    "fieldname": "section_break_60",
    "fieldtype": "Section Break",
    "hide_border": 1
+  },
+  {
+   "fieldname": "in_words",
+   "fieldtype": "Small Text",
+   "label": "In Words"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-29 16:31:34.010349",
+ "modified": "2023-07-20 16:59:57.240666",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Payment Entry",

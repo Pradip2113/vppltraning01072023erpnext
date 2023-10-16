@@ -1271,7 +1271,7 @@
  "idx": 105,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-26 12:33:15.607514",
+ "modified": "2023-07-07 16:12:08.802290",
  "modified_by": "Administrator",
  "module": "Buying",
  "name": "Purchase Order",
@@ -1315,6 +1315,22 @@
    "permlevel": 1,
    "read": 1,
    "role": "Purchase Manager",
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

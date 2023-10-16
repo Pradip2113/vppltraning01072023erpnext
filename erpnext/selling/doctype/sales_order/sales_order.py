@@ -41,6 +41,7 @@ class WarehouseRequired(frappe.ValidationError):
 
 
 class SalesOrder(SellingController):
+
 	# @frappe.whitelist()    
 	# def somsg(self):
 	# 	doc1=frappe.db.get_list('Quota',filters={'name':self.quota},fields={'name','total_quantity'})

@@ -214,8 +214,7 @@
   {
    "fieldname": "supplier_delivery_note",
    "fieldtype": "Data",
-   "label": "Supplier Delivery Note",
-   "reqd": 1
+   "label": "Supplier Delivery Note"
   },
   {
    "fieldname": "column_break1",
@@ -1048,7 +1047,6 @@
    "oldfieldname": "lr_no",
    "oldfieldtype": "Data",
    "print_width": "100px",
-   "reqd": 1,
    "width": "100px"
   },
   {
@@ -1240,7 +1238,7 @@
  "idx": 261,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-27 17:19:18.087171",
+ "modified": "2023-07-10 11:38:06.218516",
  "modified_by": "Administrator",
  "module": "Stock",
  "name": "Purchase Receipt",

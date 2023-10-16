@@ -4,11 +4,12 @@
 
 import json
 from functools import reduce
+from num2words import num2words
 
 import frappe
 from frappe import ValidationError, _, qb, scrub, throw
 from frappe.utils import cint, comma_or, flt, getdate, nowdate
-
+# from inwords import IndianRupee
 import erpnext
 from erpnext.accounts.doctype.bank_account.bank_account import (
 	get_bank_account_details,
@@ -48,6 +49,77 @@ class PaymentEntry(AccountsController):
 	# 		self.paid_amount = s.advance_amount,
 	# 		self.paid_from_account_currency = "INR"
 	# 		# self.insert()
+   
+	# @frappe.whitelist()
+	# def amtinwords(self):
+	# 	if self.total_allocated_amount:
+	# 		self.in_words = num2words(self.total_allocated_amount)
+ 
+	# @frappe.whitelist()
+	# def number_to_words_in_indian_format(num,self):
+	# 	ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+	# 	tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+	# 	thousands = ["", "Thousand", "Lakh", "Crore", "Arab", "Kharab", "Neel", "Padma", "Shankh"]
+
+	# 	def convert_three_digits(n):
+	# 		return (ones[n // 100] + " Hundred " if n >= 100 else "") + \
+	# 			(tens[(n // 10) % 10] + " " if (n // 10) % 10 > 1 else "") + \
+	# 			(ones[n % 10] if n % 10 > 0 else "")
+
+	# 	if num == 0:
+	# 		return "Zero"
+
+	# 	words = [convert_three_digits(int(num % 1000))]
+	# 	num //= 1000
+
+	# 	for i in range(1, len(thousands)):
+	# 		if num % 1000 > 0:
+	# 			words.append(convert_three_digits(int(num % 1000)) + " " + thousands[i])
+	# 		num //= 1000
+
+	# 	return ", ".join(reversed(words))
+ 
+ 
+ 
+	# @frappe.whitelist()
+	# def amtinwords(self):
+	# 	if self.total_allocated_amount:
+	# 		number = self.total_allocated_amount
+	# 		amount_in_words = self.number_to_words_in_indian_format(number)
+	# 		self.in_words = amount_in_words
+ 
+ 
+	# @frappe.whitelist()
+	# def amtinwords(self):
+	# 	ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+	# 	tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+	# 	thousands = ["", "Thousand", "Lakh", "Crore", "Arab", "Kharab", "Neel", "Padma", "Shankh"]
+
+	# 	def convert_three_digits(n):
+	# 		return (ones[n // 100] + " Hundred " if n >= 100 else "") + \
+	# 			(tens[(n // 10) % 10] + " " if (n // 10) % 10 > 1 else "") + \
+	# 			(ones[n % 10] if n % 10 > 0 else "")
+
+	# 	def number_to_words_in_indian_format(num):
+	# 		if num == 0:
+	# 			return "Zero"
+
+	# 		words = [convert_three_digits(int(num % 1000))]
+	# 		num //= 1000
+
+	# 		for i in range(1, len(thousands)):
+	# 			if num % 1000 > 0:
+	# 				words.append(convert_three_digits(int(num % 1000)) + " " + thousands[i])
+	# 			num //= 1000
+
+	# 		return ", ".join(reversed(words))
+
+	# 	if self.total_allocated_amount:
+	# 		number = self.total_allocated_amount
+	# 		amount_in_words = number_to_words_in_indian_format(number)
+	# 		self.in_words = amount_in_words
+
+	
    
 	def __init__(self, *args, **kwargs):
 		super(PaymentEntry, self).__init__(*args, **kwargs)

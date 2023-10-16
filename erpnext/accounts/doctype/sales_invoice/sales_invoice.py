@@ -191,6 +191,9 @@ class SalesInvoice(SellingController):
 				break
 
 
+	@frappe.whitelist()
+	def print_format_updateted_table(self):
+		pass
  
  
  

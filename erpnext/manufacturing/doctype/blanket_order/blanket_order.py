@@ -94,6 +94,7 @@ def make_order(source_name):
 
 	def update_doc(source_doc, target_doc, source_parent):
 		if doctype == "Quotation":
+      
 			target_doc.quotation_to = "Customer"
 			target_doc.party_name = source_doc.customer
 
